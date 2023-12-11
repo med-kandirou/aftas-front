@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { AdminDashboardComponent } from './modules/admin/components/admin-dashboard/admin-dashboard.component';
 import { CompetitionSectionComponent } from './modules/admin/components/competition-section/competition-section.component';
+import { SaveCompetitionComponent } from './core/shared/components/save-competition/save-competition.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CompetitionSectionComponent } from './modules/admin/components/competit
     AppComponent,
     AdminDashboardComponent,
     CompetitionSectionComponent,
+    SaveCompetitionComponent,
   ],
   imports: [
     BrowserModule,

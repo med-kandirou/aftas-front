@@ -18,7 +18,7 @@ export class CompetitionSectionComponent {
     this.getCompetitions(this.currentPage,this.currentSize);
   }
 
-  competitions:Competition[]=[]
+  competitions:Competition[]
 
   getCompetitions(page:number,size:number):void{
     this.seviceComp.getQuestions(page,size).subscribe((data:any)=>{
