@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { AdminDashboardComponent } from './modules/admin/components/admin-dashboard/admin-dashboard.component';
+import { CompetitionSectionComponent } from './modules/admin/components/competition-section/competition-section.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminDashboardComponent,
+    CompetitionSectionComponent,
   ],
   imports: [
     BrowserModule,
