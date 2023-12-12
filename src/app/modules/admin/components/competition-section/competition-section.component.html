@@ -35,7 +35,7 @@
                                 Amount
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Edit</span>
+                                Action
                             </th>
                         </tr>
                     </thead>
@@ -62,8 +62,11 @@
                             <td class="px-6 py-4">
                                 {{ comp.amount }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4" *ngIf="getDayDifference(comp.date)==true">
                                 <a [routerLink]="'/admin/competition/' + comp.code + '/participants'" class="font-medium">Add participant</a>
+                            </td> 
+                            <td class="px-6 py-4" *ngIf="getDayDifference(comp.date)==false">
+                                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Not Availible</span>
                             </td>                            
                         </tr>
                     </tbody>

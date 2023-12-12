@@ -19,14 +19,7 @@ export class ListParticipantComponent {
   myArray:any;
   ngOnInit(): void {
     this.code=this.ActivatedRoute.snapshot.params['codeComp']
-    // this.getRankings(this.code);
-    this.array=this.code.split("-");
-    this.array.forEach((item: string)=>{
-      if(this.array.indexOf(item)!=0){
-        console.log(item)
-      }
-    })
-    
+    this.getRankings(this.code);
   }
 
   getRankings(code:string){
@@ -36,15 +29,4 @@ export class ListParticipantComponent {
     });
   }
 
-  getHourDifference(startDate:Date, endDate:Date) :Boolean{
-    const startMillis = startDate.getTime();
-    const endMillis = endDate.getTime();
-    const millisDifference = endMillis - startMillis;
-    const hourDifference = millisDifference / (1000 * 60 * 60);
-    console.log(hourDifference);
-    if(hourDifference>=24){
-      return true
-    }
-    return false;
-  }
 }

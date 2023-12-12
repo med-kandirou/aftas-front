@@ -28,6 +28,15 @@ export class CompetitionSectionComponent {
       this.competitions=data.content;
     })
   }
+
+  getDayDifference(startDate: Date) :Boolean{
+    let date1 = new Date(startDate);
+    let currentDate = new Date(); 
+    let differenceInTime =date1.getTime()-currentDate.getTime();
+    let differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+    return differenceInDays>=1;
+  }
+
   changefiltre(filtre: any) {
     this.currentPage=0;
     this.currentSize=3;
