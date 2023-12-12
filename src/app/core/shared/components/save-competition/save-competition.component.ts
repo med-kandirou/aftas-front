@@ -20,7 +20,7 @@ export class SaveCompetitionComponent implements OnInit{
 
   initform():void{
     this.cometitionForm=this.fb.group({
-      code: "code1122",
+      code: "",
       date: [null, [Validators.required]],
       startTime: [null, [Validators.required]],
       endTime: ['', Validators.required],
