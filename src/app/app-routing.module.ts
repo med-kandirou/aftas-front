@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminDashboardComponent } from './modules/admin/components/admin-dashboard/admin-dashboard.component';
 import { CompetitionSectionComponent } from './modules/admin/components/competition-section/competition-section.component';
-import { SignInSectionComponent } from './modules/admin/components/sign-in-section/sign-in-section.component';
+import { ListParticipantComponent } from './modules/admin/components/list-participant/list-participant.component';
 
 const routes: Routes = [
-  // { path : 'admin', component: AdminDashboardComponent},
   { path : 'admin/competition', component: CompetitionSectionComponent},
-  { path : 'admin/competition/:codeComp/participants', component: SignInSectionComponent},
+  { path : 'admin/competition/:codeComp/participants', component: ListParticipantComponent},
 ];
 
 @NgModule({

@@ -9,7 +9,8 @@ import { StoreModule } from '@ngrx/store';
 import { AdminDashboardComponent } from './modules/admin/components/admin-dashboard/admin-dashboard.component';
 import { CompetitionSectionComponent } from './modules/admin/components/competition-section/competition-section.component';
 import { SaveCompetitionComponent } from './core/shared/components/save-competition/save-competition.component';
-import { SignInSectionComponent } from './modules/admin/components/sign-in-section/sign-in-section.component';
+import { CardParticipantComponent } from './core/shared/components/card-participant/card-participant.component';
+import { ListParticipantComponent } from './modules/admin/components/list-participant/list-participant.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SignInSectionComponent } from './modules/admin/components/sign-in-secti
     AdminDashboardComponent,
     CompetitionSectionComponent,
     SaveCompetitionComponent,
-    SignInSectionComponent,
+    CardParticipantComponent,
+    ListParticipantComponent,
   ],
   imports: [
     BrowserModule,

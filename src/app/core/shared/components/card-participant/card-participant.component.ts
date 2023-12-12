@@ -1,0 +1,14 @@
+import { Component, Input } from '@angular/core';
+import { Member } from 'src/app/core/models/member.model';
+
+@Component({
+  selector: 'app-card-participant',
+  templateUrl: './card-participant.component.html',
+  styleUrls: ['./card-participant.component.css']
+})
+export class CardParticipantComponent {
+
+  @Input() participant:Member
+  @Input() visible: boolean;
+
+}

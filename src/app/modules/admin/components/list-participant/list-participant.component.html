@@ -1,0 +1,6 @@
+<app-admin-dashboard>
+    <div class="grid grid-cols-3 gap-4">
+        <app-card-participant *ngFor="let rank of rankings" [participant]="rank.member"></app-card-participant>
+    </div>
+    
+</app-admin-dashboard>
