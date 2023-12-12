@@ -63,8 +63,8 @@
                                 {{ comp.amount }}
                             </td>
                             <td class="px-6 py-4">
-                                <button type="button" class="font-medium">Add participant</button>
-                            </td>
+                                <a [routerLink]="'/admin/competition/' + comp.code + '/participants'" class="font-medium">Add participant</a>
+                            </td>                            
                         </tr>
                     </tbody>
                 </table>

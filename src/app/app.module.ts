@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { AdminDashboardComponent } from './modules/admin/components/admin-dashboard/admin-dashboard.component';
 import { CompetitionSectionComponent } from './modules/admin/components/competition-section/competition-section.component';
 import { SaveCompetitionComponent } from './core/shared/components/save-competition/save-competition.component';
+import { SignInSectionComponent } from './modules/admin/components/sign-in-section/sign-in-section.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SaveCompetitionComponent } from './core/shared/components/save-competit
     AdminDashboardComponent,
     CompetitionSectionComponent,
     SaveCompetitionComponent,
+    SignInSectionComponent,
   ],
   imports: [
     BrowserModule,
