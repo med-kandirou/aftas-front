@@ -8,30 +8,37 @@ import { CompetitionService } from 'src/app/core/services/competition.service';
   styleUrls: ['./competition-section.component.css']
 })
 export class CompetitionSectionComponent {
+
   constructor(private seviceComp:CompetitionService){}
 
   currentPage: number=0;
   currentSize: number=3;
+  currentfiltre: string="pending";
   totalPages: number=0;
 
   ngOnInit(): void {
-    this.getCompetitions(this.currentPage,this.currentSize);
+    this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre);
   }
 
   competitions:Competition[]
 
-  getCompetitions(page:number,size:number):void{
-    this.seviceComp.getQuestions(page,size).subscribe((data:any)=>{
+  getCompetitions(page:number,size:number,filtre:string):void{
+    this.seviceComp.getcompetitions(page,size,filtre).subscribe((data:any)=>{
       this.totalPages=data.totalPages;
       this.competitions=data.content;
     })
   }
-
-
+  changefiltre(filtre: any) {
+    this.currentPage=0;
+    this.currentSize=3;
+    this.currentfiltre=filtre.value;
+    this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre);
+    console.log(this.competitions)
+  }
 
   paginate(page:number):void{
     this.currentPage=page;
-    this.getCompetitions(page,this.currentSize)
+    this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre);
   }
 
   nextPage(currentPage:number):void{
@@ -39,7 +46,7 @@ export class CompetitionSectionComponent {
       return
     }
     this.currentPage=currentPage+1;
-    this.getCompetitions(this.currentPage,this.currentSize);
+    this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre);
   }
 
   previousPage(currentPage:number){
@@ -47,7 +54,7 @@ export class CompetitionSectionComponent {
       return
     }
     this.currentPage=currentPage-1;
-    this.getCompetitions(this.currentPage,this.currentSize);
+    this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre);
   }
 
 }

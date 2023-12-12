@@ -1,5 +1,13 @@
 <app-admin-dashboard>
     <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <label class="block mb-2 font-medium text-gray-900 dark:text-white">Filtre by date</label>
+        <select class="mb-6 block px-4 py-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            (change)="changefiltre($event.target)">
+            <option selected disabled>Choose an option</option>
+            <option value="old">Old</option>
+            <option value="pending">Pending</option>
+            <option value="future">Future</option>
+        </select>
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

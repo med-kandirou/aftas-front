@@ -20,9 +20,9 @@ export class SaveCompetitionComponent implements OnInit{
 
   initform():void{
     this.cometitionForm=this.fb.group({
-      code: null,
-      date: [null, [Validators.required, Validators.min(0)]],
-      startTime: [null, [Validators.required, Validators.min(0)]],
+      code: "code1122",
+      date: [null, [Validators.required]],
+      startTime: [null, [Validators.required]],
       endTime: ['', Validators.required],
       numberOfParticipants: ['', Validators.required],
       location: ['', Validators.required],
@@ -30,13 +30,25 @@ export class SaveCompetitionComponent implements OnInit{
     });
   }
   onSubmit() {
+    console.log(this.cometitionForm);
     if (this.cometitionForm.valid) {
       const formData: FormGroup = this.cometitionForm.value;
         this.compService.save(formData).subscribe((data:Competition)=>{
-          Swal.fire({
-            title: "succes",
-            text: `Competition added`,
-            icon: "success"
+          console.log(data);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Added successfully"
           });
         });
     } else {
