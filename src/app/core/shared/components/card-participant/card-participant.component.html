@@ -10,7 +10,7 @@
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{{ participant.identityDocument }}</p>
         </div>
         <br>
-        <div class="flex justify-end mt-4">
+        <div class="flex justify-end mt-4" *ngIf="visible">
             <a href="#" class="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">Add hunt</a>
         </div>
     </div>
