@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Member } from 'src/app/core/models/member.model';
 
 @Component({
@@ -11,4 +11,9 @@ export class CardParticipantComponent {
   @Input() participant:Member
   @Input() visible: boolean;
 
+  @Output() numEmitter = new EventEmitter<number>();
+
+  emitNum(num:number) {
+    this.numEmitter.emit(num);
+  }
 }

@@ -11,6 +11,6 @@
         </div>
         <br>
         <div class="flex justify-end mt-4" *ngIf="visible">
-            <button class="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">Add hunt</button>
+            <button (click)="emitNum(participant.num)" class="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">Add hunt</button>
         </div>
     </div>

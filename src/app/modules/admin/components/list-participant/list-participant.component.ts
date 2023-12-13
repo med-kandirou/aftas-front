@@ -11,13 +11,12 @@ import { Competition } from 'src/app/core/models/competition.model';
   styleUrls: ['./list-participant.component.css']
 })
 export class ListParticipantComponent {
-
   constructor(private servRanking:RankingService,private servCompetition:CompetitionService,private ActivatedRoute :ActivatedRoute){}
 
   rankings:Ranking[]
   code:string
   checkday:number;
-
+  competition:Competition;
 
   ngOnInit(): void {
     this.code=this.ActivatedRoute.snapshot.params['codeComp']
@@ -33,6 +32,7 @@ export class ListParticipantComponent {
 
   getCompetition(code:string){
     this.servCompetition.getOne(code).subscribe((data:Competition)=>{
+      this.competition=data;
       this.checkday=this.getDayDifference(data.date);
     });
   }
@@ -48,5 +48,13 @@ export class ListParticipantComponent {
     return differenceInDays;
   }
 
+  member_id:number;
+  competition_code:string;
+  addHintVisible:Boolean=false;
+  getNumparticiapnt(value: number) {
+    this.member_id=value;
+    this.competition_code=this.competition.code;
+    this.addHintVisible=true;
+  }
 
 }

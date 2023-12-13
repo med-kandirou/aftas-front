@@ -25,15 +25,18 @@ export class AddHuntComponent implements OnInit{
     });
   }
 
-  @Input() isvisible:Boolean;
+  
+  @Input() member_id:number;
+  @Input() competition_code:string;
+
   huntForm: any;
   initform():void{
     this.huntForm=this.fb.group({
-      id: "",
+      id: "null",
       numberOfFish: [null, [Validators.required]],
       fish_name:[null, [Validators.required]],
-      member_id: [null, [Validators.required]],
-      competition_code: [null, [Validators.required]],
+      member_id: [this.member_id],
+      competition_code: [this.competition_code],
     });
   }
 

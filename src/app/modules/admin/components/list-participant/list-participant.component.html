@@ -1,10 +1,10 @@
 <app-admin-dashboard>
     <div class="grid grid-cols-3 gap-4">
         <div *ngFor="let rank of rankings">
-            <app-card-participant [participant]="rank.member" [visible]="this.checkday==0"></app-card-participant>
+            <app-card-participant [participant]="rank.member" [visible]="this.checkday==0" (numEmitter)="getNumparticiapnt($event)"></app-card-participant>
         </div>  
     </div>
 
-    <button *ngIf="this.checkday>0">add participant</button>
-
+    <!-- <button *ngIf="this.checkday>0">add participant</button> -->
+    <app-add-hunt [member_id]="member_id" [competition_code]="competition_code" *ngIf="addHintVisible"></app-add-hunt>
 </app-admin-dashboard>
