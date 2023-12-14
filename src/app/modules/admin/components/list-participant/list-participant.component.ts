@@ -38,7 +38,7 @@ export class ListParticipantComponent {
   }
 
   calculeRanks(){
-    this.servRanking.getRankingsbyComp(this.code).subscribe((data:Ranking[])=>{
+    this.servRanking.getRankingsbyComp(this.code).subscribe((data:any)=>{
       console.log(data);
     });
   }

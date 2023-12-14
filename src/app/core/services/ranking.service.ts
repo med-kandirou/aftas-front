@@ -16,8 +16,8 @@ export class RankingService {
     return this.http.get<Ranking[]>(API_BASE_URL+`/api/Ranking/byCompetition/${code}`, { headers: { Accept: 'application/json' } });
   }
 
-  calculeRanks(code:string): Observable<Ranking[]> {
-    return this.http.get<Ranking[]>(API_BASE_URL+`/api/Ranking/calcule/${code}`, { headers: { Accept: 'application/json' } });
+  calculeRanks(code:string): Observable<any> {
+    return this.http.get<any>(API_BASE_URL+`/api/Ranking/calcule/${code}`, { headers: { Accept: 'application/json' } });
   }
 
   // save(form:FormGroup): Observable<Ranking> {
