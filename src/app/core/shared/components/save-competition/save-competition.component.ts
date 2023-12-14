@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Competition } from 'src/app/core/models/competition.model';
 import { CompetitionService } from 'src/app/core/services/competition.service';
@@ -29,12 +29,22 @@ export class SaveCompetitionComponent implements OnInit{
       amount: ['', Validators.required],
     });
   }
+  @Output() added = new EventEmitter<void>();;
   onSubmit() {
     console.log(this.cometitionForm);
     if (this.cometitionForm.valid) {
       const formData: FormGroup = this.cometitionForm.value;
         this.compService.save(formData).subscribe((data:Competition)=>{
-          console.log(data);
+          this.cometitionForm.patchValue({
+            code: "",
+            date: [null, [Validators.required]],
+            startTime: [null, [Validators.required]],
+            endTime: ['', Validators.required],
+            numberOfParticipants: ['', Validators.required],
+            location: ['', Validators.required],
+            amount: ['', Validators.required],
+          });
+          this.added.emit();
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -55,5 +65,4 @@ export class SaveCompetitionComponent implements OnInit{
       console.log("log");
     }
   }
-
 }

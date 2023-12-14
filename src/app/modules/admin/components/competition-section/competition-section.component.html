@@ -100,5 +100,5 @@
             </nav>
         </div>
     </div>
-    <app-save-competition></app-save-competition>
+    <app-save-competition (added)="this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre)"></app-save-competition>
 </app-admin-dashboard>
