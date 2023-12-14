@@ -6,5 +6,5 @@
     </div>
 
     <!-- <button *ngIf="this.checkday>0">add participant</button> -->
-    <app-add-hunt [member_id]="member_id" [competition_code]="competition_code" *ngIf="addHintVisible"></app-add-hunt>
+    <app-add-hunt [member_id]="member_id" [competition_code]="competition_code" *ngIf="addHintVisible" (close)="addHintVisible=false"></app-add-hunt>
 </app-admin-dashboard>

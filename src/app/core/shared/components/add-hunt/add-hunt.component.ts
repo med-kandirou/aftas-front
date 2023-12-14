@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Fish } from 'src/app/core/models/fish.model';
 import { Hunting } from 'src/app/core/models/hunt.model';
@@ -25,7 +25,6 @@ export class AddHuntComponent implements OnInit{
     });
   }
 
-  
   @Input() member_id:number;
   @Input() competition_code:string;
 
@@ -33,7 +32,7 @@ export class AddHuntComponent implements OnInit{
   initform():void{
     this.huntForm=this.fb.group({
       id: "null",
-      numberOfFish: [null, [Validators.required]],
+      numberOfFish: [1, [Validators.required]],
       fish_name:[null, [Validators.required]],
       member_id: [this.member_id],
       competition_code: [this.competition_code],
@@ -41,11 +40,13 @@ export class AddHuntComponent implements OnInit{
   }
 
   onSubmit() {
-    console.log(this.huntForm);
     if (this.huntForm.valid) {
       const formData: FormGroup = this.huntForm.value;
         this.huntService.save(formData).subscribe((data:Hunting)=>{
-          console.log(data);
+          this.huntForm.patchValue({
+            numberOfFish: 1,
+            fish_name: null
+          });
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -66,5 +67,8 @@ export class AddHuntComponent implements OnInit{
       console.log("log");
     }
   }
+
+  @Output() close = new EventEmitter<void>();
+
 
 }
