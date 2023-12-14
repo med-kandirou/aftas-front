@@ -37,6 +37,11 @@ export class ListParticipantComponent {
     });
   }
 
+  calculeRanks(){
+    this.servRanking.getRankingsbyComp(this.code).subscribe((data:Ranking[])=>{
+      console.log(data);
+    });
+  }
 
   getDayDifference(date: Date):number{
     let dateCompetition = new Date(date);

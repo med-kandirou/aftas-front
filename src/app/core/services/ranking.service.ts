@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_BASE_URL } from './api.config';
 import { Ranking } from '../models/ranking.model';
-import { FormGroup } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,10 @@ export class RankingService {
 
   getRankingsbyComp(code:string): Observable<Ranking[]> {
     return this.http.get<Ranking[]>(API_BASE_URL+`/api/Ranking/byCompetition/${code}`, { headers: { Accept: 'application/json' } });
+  }
+
+  calculeRanks(code:string): Observable<Ranking[]> {
+    return this.http.get<Ranking[]>(API_BASE_URL+`/api/Ranking/calcule/${code}`, { headers: { Accept: 'application/json' } });
   }
 
   // save(form:FormGroup): Observable<Ranking> {
