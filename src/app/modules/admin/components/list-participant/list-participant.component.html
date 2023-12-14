@@ -1,7 +1,7 @@
 <app-admin-dashboard>
     <div class="grid grid-cols-3 gap-4">
         <div *ngFor="let rank of rankings">
-            <app-card-participant [participant]="rank.member" [visible]="this.checkday==0" (numEmitter)="getNumparticiapnt($event)"></app-card-participant>
+            <app-card-participant [participant]="rank.rankingId.member" [visible]="this.checkday==0" (numEmitter)="getNumparticiapnt($event)"></app-card-participant>
         </div>  
     </div>
 
