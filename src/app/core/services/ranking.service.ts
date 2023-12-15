@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_BASE_URL } from './api.config';
 import { Ranking } from '../models/ranking.model';
+import { FormBuilder } from '@angular/forms';
+
 
 
 @Injectable({
@@ -21,8 +23,8 @@ export class RankingService {
     return this.http.get<any>(API_BASE_URL+`/api/Ranking/calcule/${code}`, { headers: { Accept: 'application/json' } });
   }
 
-  // save(form:FormGroup): Observable<Ranking> {
-  //   return this.http.post<Ranking>(API_BASE_URL+`/api/Ranking`,form ,{ headers: { Accept: 'application/json' } });
-  // }
+  save(form:any): Observable<Ranking> {
+    return this.http.post<Ranking>(API_BASE_URL+`/api/Ranking`,form ,{ headers: { Accept: 'application/json' } });
+  }
 
 }
