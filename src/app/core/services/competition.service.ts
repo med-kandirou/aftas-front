@@ -4,6 +4,7 @@ import { API_BASE_URL } from './api.config';
 import { Competition } from '../models/competition.model';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
+import { Member } from '../models/member.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class CompetitionService {
 
   save(form:FormGroup): Observable<Competition> {
     return this.http.post<Competition>(API_BASE_URL+`/api/Competition`,form ,{ headers: { Accept: 'application/json' } });
+  }
+
+  getMemberNotExistInComp(code: string): Observable<Member[]> {
+    return this.http.get<Member[]>(API_BASE_URL+`/api/Member/MemberNotExistInComp/${code}`, { headers: { Accept: 'application/json' } });
   }
 }

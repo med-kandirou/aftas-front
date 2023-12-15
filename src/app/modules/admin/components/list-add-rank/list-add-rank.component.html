@@ -1,0 +1,59 @@
+<app-admin-dashboard>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        First Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Last Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Nationality
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Accession Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        identityDocument
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        identityNumber
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of members" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ m.name }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ m.familyName }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ m.nationality }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ m.accessionDate }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ m.identityDocument }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ m.identityNumber }}
+                    </td>
+                    <td class="flex items-center px-6 py-4">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M9 12h6" /><path d="M12 9v6" /></svg>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</app-admin-dashboard>
+    

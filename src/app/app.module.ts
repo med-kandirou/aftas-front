@@ -12,7 +12,7 @@ import { SaveCompetitionComponent } from './core/shared/components/save-competit
 import { CardParticipantComponent } from './core/shared/components/card-participant/card-participant.component';
 import { ListParticipantComponent } from './modules/admin/components/list-participant/list-participant.component';
 import { AddHuntComponent } from './core/shared/components/add-hunt/add-hunt.component';
-import { AddRankingComponent } from './modules/admin/components/add-ranking/add-ranking.component';
+import { ListAddRankComponent } from './modules/admin/components/list-add-rank/list-add-rank.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { AddRankingComponent } from './modules/admin/components/add-ranking/add-
     CardParticipantComponent,
     ListParticipantComponent,
     AddHuntComponent,
-    AddRankingComponent,
+    ListAddRankComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ranking } from 'src/app/core/models/ranking.model';
 import { RankingService } from 'src/app/core/services/ranking.service';
 import { ActivatedRoute  } from '@angular/router';
@@ -10,7 +10,7 @@ import { Competition } from 'src/app/core/models/competition.model';
   templateUrl: './list-participant.component.html',
   styleUrls: ['./list-participant.component.css']
 })
-export class ListParticipantComponent {
+export class ListParticipantComponent implements OnInit {
   constructor(private servRanking:RankingService,private servCompetition:CompetitionService,private ActivatedRoute :ActivatedRoute){}
 
   rankings:Ranking[]

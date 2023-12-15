@@ -10,6 +10,7 @@ import { Ranking } from '../models/ranking.model';
 })
 export class RankingService {
 
+
   constructor(private http:HttpClient) { }
 
   getRankingsbyComp(code:string): Observable<Ranking[]> {
@@ -23,4 +24,5 @@ export class RankingService {
   // save(form:FormGroup): Observable<Ranking> {
   //   return this.http.post<Ranking>(API_BASE_URL+`/api/Ranking`,form ,{ headers: { Accept: 'application/json' } });
   // }
+
 }
