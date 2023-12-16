@@ -8,68 +8,27 @@
             <option value="pending">Pending</option>
             <option value="future">Future</option>
         </select>
-        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Code
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Date
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Start
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                End
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Number of participants
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Location
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Amount
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Participant
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let comp of competitions" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ comp.code }}
-                            </th>
-                            <td class="px-6 py-4">
-                                {{ comp.date }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ comp.startTime }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ comp.endTime }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ comp.numberOfParticipants }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ comp.location }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ comp.amount }}
-                            </td>
-                            <td class="px-6 py-4">
-                                <a [routerLink]="'/admin/competition/' + comp.code + '/participants'" class="font-medium">Participant</a>
-                            </td>                           
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="grid grid-cols-2 gap-4 mb-3">
+            <div *ngFor="let comp of competitions">
+                <div class="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div class="w-1/3 bg-cover" style="background-image: url('https://maghreb.simplonline.co/_next/image?url=https%3A%2F%2Fsimplonline-v3-prod.s3.eu-west-3.amazonaws.com%2Fmedia%2Fimage%2Fjpg%2Fchasse-sous-marine-sous-eau-950002-169315-657215df5fd58614044589.jpg&w=1280&q=75')"></div>
+                    <div class="w-2/3 p-4 md:p-4">
+                        <h1 class="text-xl font-bold text-gray-800 dark:text-white"> {{ comp.location }}</h1>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Day : {{ comp.date }}</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Start Time : {{ comp.startTime }}</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">End Time : {{ comp.endTime }}</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Number : {{ comp.numberOfParticipants }}</p>
+                        <div class="flex mt-2 item-center">
+                        </div>
+                        <div class="flex justify-between mt-3 item-center">
+                            <h1 class="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">$ {{ comp.amount }}</h1>
+                            <a [routerLink]="'/admin/competition/' + comp.code + '/participants'" class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Participant</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+        </div>
+            <nav class="bg-white shadow-md rounded-md flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
                 <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
                     Current Page : 
                 <span class="font-semibold text-gray-900 dark:text-white">{{ currentPage+1 }}</span>
@@ -98,7 +57,7 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-    </div>
+</div>
+
     <app-save-competition (added)="this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre)"></app-save-competition>
 </app-admin-dashboard>

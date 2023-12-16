@@ -12,7 +12,7 @@ export class CompetitionSectionComponent {
   constructor(private seviceComp:CompetitionService){}
 
   currentPage: number=0;
-  currentSize: number=3;
+  currentSize: number=2;
   currentfiltre: string="pending";
   totalPages: number=0;
 

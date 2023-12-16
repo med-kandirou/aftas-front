@@ -12,11 +12,12 @@ import Swal from 'sweetalert2';
 export class SaveCompetitionComponent implements OnInit{
 
   cometitionForm: any;
-
   constructor(private fb:FormBuilder,private compService:CompetitionService){}
   ngOnInit(): void {
     this.initform();
   }
+
+  visible:Boolean=false
 
   initform():void{
     this.cometitionForm=this.fb.group({
