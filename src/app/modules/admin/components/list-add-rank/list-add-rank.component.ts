@@ -45,7 +45,7 @@ export class ListAddRankComponent {
       this.getMemberNotExistInComp(this.code);
       Swal.fire({
         title: "success!",
-        text: "The mamaber was subscribed!",
+        text: "The member was subscribed!",
         icon: "success"
       });
     })

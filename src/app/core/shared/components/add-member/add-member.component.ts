@@ -49,7 +49,7 @@ export class AddMemberComponent {
           });
           Toast.fire({
             icon: "success",
-            title: ""+data.name +" + "+ data.name+"Added successfully"
+            title: ""+data.name +" + "+ data.familyName+"Added successfully"
           });
         });
     } else {
