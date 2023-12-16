@@ -29,7 +29,7 @@ export class SaveCompetitionComponent implements OnInit{
       amount: ['', Validators.required],
     });
   }
-  @Output() added = new EventEmitter<void>();;
+  @Output() added = new EventEmitter<void>();
   onSubmit() {
     console.log(this.cometitionForm);
     if (this.cometitionForm.valid) {

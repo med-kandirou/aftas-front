@@ -13,6 +13,7 @@ import { CardParticipantComponent } from './core/shared/components/card-particip
 import { ListParticipantComponent } from './modules/admin/components/list-participant/list-participant.component';
 import { AddHuntComponent } from './core/shared/components/add-hunt/add-hunt.component';
 import { ListAddRankComponent } from './modules/admin/components/list-add-rank/list-add-rank.component';
+import { AddMemberComponent } from './core/shared/components/add-member/add-member.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ListAddRankComponent } from './modules/admin/components/list-add-rank/l
     ListParticipantComponent,
     AddHuntComponent,
     ListAddRankComponent,
+    AddMemberComponent,
   ],
   imports: [
     BrowserModule,
