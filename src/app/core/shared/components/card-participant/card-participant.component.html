@@ -1,31 +1,10 @@
-<!-- 
-    <div class="max-w-sm px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
-        <div class="flex items-center justify-between">
-            <span class="text-sm font-light text-gray-800 dark:text-gray-400">{{ participant.accessionDate }}</span>
-            <span class="px-3 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full dark:bg-blue-300 dark:text-blue-900">{{ participant.nationality }}</span>
-        </div>
-        <div>
-            <h1 class="mt-2 text-lg font-semibold text-gray-800 dark:text-white">{{ participant.name }} {{ participant.familyName }}</h1>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{{ participant.identityNumber }}</p>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{{ participant.identityDocument }}</p>
-        </div>
-        <br>
-        <div class="flex justify-end mt-4" *ngIf="visible">
-            <button (click)="emitNum(participant.num)" class="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">Add hunt</button>
-        </div>
-    </div>
- -->
-    <div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-        <img class="object-cover object-center w-full h-56" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar">
+<div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        <img class="object-cover object-center w-full h-56" src="data:image/png;base64,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" alt="avatar">
         <div class="flex items-center px-6 py-3 bg-gray-900">
-                <!-- <svg aria-label="number icon" class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"/>
-                </svg> -->
             <h1 class="text-lg font-semibold text-white">{{ participant.accessionDate }}</h1>
         </div>
-        <div class="px-6 py-4">
+        <div class="px-5 py-4">
             <h1 class="text-xl font-semibold text-gray-800 dark:text-white">{{ participant.name }} {{ participant.familyName }}</h1>
-            <!-- <p class="py-2 text-gray-700 dark:text-gray-400">Full Stack maker & UI / UX Designer , love hip hop music Author of Building UI.</p> -->
             <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                 <svg aria-label="suitcase icon" class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 11H10V13H14V11Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z"/>
@@ -46,7 +25,7 @@
                 <h1 class="px-2 text-sm">{{ participant.identityDocument }}</h1>
             </div>
         </div>
-        <div class="flex justify-end mt-4" *ngIf="visible">
-            <button (click)="emitNum(participant.num)" class="text-lg font-medium text-blue-600 dark:text-blue-300" tabindex="0" role="link">Add hunt</button>
+        <div class="flex justify-center items-center mb-1">
+            <button (click)="emitNum(participant.num)" class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Add hunt</button>
         </div>
     </div>

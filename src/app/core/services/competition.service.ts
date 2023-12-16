@@ -24,7 +24,5 @@ export class CompetitionService {
     return this.http.post<Competition>(API_BASE_URL+`/api/Competition`,form ,{ headers: { Accept: 'application/json' } });
   }
 
-  getMemberNotExistInComp(code: string): Observable<Member[]> {
-    return this.http.get<Member[]>(API_BASE_URL+`/api/Member/MemberNotExistInComp/${code}`, { headers: { Accept: 'application/json' } });
-  }
+
 }

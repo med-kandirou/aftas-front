@@ -32,7 +32,6 @@ export class CompetitionSectionComponent {
   
   changefiltre(filtre: any) {
     this.currentPage=0;
-    this.currentSize=3;
     this.currentfiltre=filtre.value;
     this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre);
     console.log(this.competitions)

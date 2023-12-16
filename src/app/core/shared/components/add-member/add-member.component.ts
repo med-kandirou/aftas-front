@@ -28,7 +28,7 @@ export class AddMemberComponent {
       identityNumber: [null, Validators.required],
     });
   }
-  @Output() added = new EventEmitter<void>();;
+  @Output() added = new EventEmitter<void>();
   onSubmit() {
     console.log(this.memberForm);
     if (this.memberForm.valid) {
@@ -56,4 +56,7 @@ export class AddMemberComponent {
       console.log("log");
     }
   }
+  index:string
+  @Output() search = new EventEmitter<string>();
+
 }

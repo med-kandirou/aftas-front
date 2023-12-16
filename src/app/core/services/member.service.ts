@@ -14,4 +14,12 @@ export class MemberService {
   save(form:FormGroup): Observable<Member> {
     return this.http.post<Member>(API_BASE_URL+`/api/Member`,form ,{ headers: { Accept: 'application/json' } });
   }
+
+  getMemberNotExistInComp(code: string): Observable<Member[]> {
+    return this.http.get<Member[]>(API_BASE_URL+`/api/Member/MemberNotExistInComp/${code}`, { headers: { Accept: 'application/json' } });
+  }
+
+  search(index:string,code:string): Observable<Member[]> {
+    return this.http.get<Member[]>(API_BASE_URL+`/api/Member/find/${code}/${index}` ,{ headers: { Accept: 'application/json' } });
+  }
 }
