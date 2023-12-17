@@ -15,8 +15,8 @@ export class RankingService {
 
   constructor(private http:HttpClient) { }
 
-  getRankingsbyComp(code:string): Observable<Ranking[]> {
-    return this.http.get<Ranking[]>(API_BASE_URL+`/api/Ranking/byCompetition/${code}`, { headers: { Accept: 'application/json' } });
+  getRankingsbyComp(code:string): Observable<any> {
+    return this.http.get<any>(API_BASE_URL+`/api/Ranking/byCompetition/${code}`, { headers: { Accept: 'application/json' } });
   }
 
   calculeRanks(code:string): Observable<any> {

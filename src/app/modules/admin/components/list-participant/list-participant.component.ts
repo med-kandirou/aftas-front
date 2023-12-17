@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ranking } from 'src/app/core/models/ranking.model';
 import { RankingService } from 'src/app/core/services/ranking.service';
-import { ActivatedRoute  } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { CompetitionService } from 'src/app/core/services/competition.service';
 import { Competition } from 'src/app/core/models/competition.model';
 
@@ -11,7 +11,7 @@ import { Competition } from 'src/app/core/models/competition.model';
   styleUrls: ['./list-participant.component.css']
 })
 export class ListParticipantComponent implements OnInit {
-  constructor(private servRanking:RankingService,private servCompetition:CompetitionService,private ActivatedRoute :ActivatedRoute){}
+  constructor(private servRanking:RankingService,private servCompetition:CompetitionService,private ActivatedRoute :ActivatedRoute,private router: Router){}
 
   rankings:Ranking[]
   code:string
@@ -38,8 +38,8 @@ export class ListParticipantComponent implements OnInit {
   }
 
   calculeRanks(){
-    this.servRanking.getRankingsbyComp(this.code).subscribe((data:any)=>{
-      console.log(data);
+    this.servRanking.calculeRanks(this.code).subscribe((data:any)=>{
+      this.router.navigate(['/admin/competition/'+this.code+'/podium']);
     });
   }
 

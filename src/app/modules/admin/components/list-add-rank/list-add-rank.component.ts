@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute  } from '@angular/router';
 import { Member } from 'src/app/core/models/member.model';
 import { Ranking } from 'src/app/core/models/ranking.model';
-import { CompetitionService } from 'src/app/core/services/competition.service';
 import { MemberService } from 'src/app/core/services/member.service';
 import { RankingService } from 'src/app/core/services/ranking.service';
 import Swal from 'sweetalert2';

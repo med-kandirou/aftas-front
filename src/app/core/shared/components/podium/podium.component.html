@@ -1,0 +1,25 @@
+<app-admin-dashboard>
+    <div class="container podium">
+        <div class="podium__item">
+        <p class="podium__city font-bold">{{ this.rankings[1].rankingId.member.name }}</p>
+        <p class="podium__city">{{ this.rankings[1].score }} points</p>
+        <div class="podium__rank second">{{ this.rankings[1].rank }}</div>
+        </div>
+        <div class="podium__item">
+        <p class="podium__city font-bold">{{ this.rankings[0].rankingId.member.name }}</p>
+        <p class="podium__city">{{ this.rankings[0].score }} points</p>
+        <div class="podium__rank first">
+            <svg class="podium__number" viewBox="0 0 27.476 75.03" xmlns="http://www.w3.org/2000/svg">
+            <g transform="matrix(1, 0, 0, 1, 214.957736, -43.117417)">
+            <path class="st8" d="M -198.928 43.419 C -200.528 47.919 -203.528 51.819 -207.828 55.219 C -210.528 57.319 -213.028 58.819 -215.428 60.019 L -215.428 72.819 C -210.328 70.619 -205.628 67.819 -201.628 64.119 L -201.628 117.219 L -187.528 117.219 L -187.528 43.419 L -198.928 43.419 L -198.928 43.419 Z" style="fill: #ffffff;"/>
+            </g>
+        </svg>
+        </div>
+    </div>
+        <div class="podium__item">
+        <p class="podium__city font-bold">{{ this.rankings[2].rankingId.member.name }}</p>
+        <p class="podium__city">{{ this.rankings[2].score }} points</p>
+        <div class="podium__rank third">3</div>
+        </div>
+    </div>
+</app-admin-dashboard>
