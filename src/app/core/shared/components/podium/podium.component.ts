@@ -21,6 +21,7 @@ export class PodiumComponent {
   getRankingbyCom(code:string){
     this.servRank.getRankingsbyComp(code).subscribe((data:any)=>{
       this.rankings=data;
+      console.log(this.rankings)
     })
   }
 }
