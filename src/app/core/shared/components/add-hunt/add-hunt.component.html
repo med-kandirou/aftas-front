@@ -19,9 +19,15 @@
                     <option>--select--</option>
                     <option *ngFor="let f of fishes" [value]="f.name">{{ f.name }}</option>
                 </select>
+                <div *ngIf="huntForm.get('fish_name').hasError('required')" class="text-red-500 mt-1">
+                    Fish selection is required
+                </div>
                 <div>
                     <label for="numberOfFish" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number of fish :</label>
                     <input type="number" min="1" id="numberOfFish" formControlName="numberOfFish" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                    <div *ngIf="huntForm.get('numberOfFish').hasError('required')" class="text-red-500 mt-1">
+                        Number of fish is required
+                    </div>
                 </div>
                 </div>
                 <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
