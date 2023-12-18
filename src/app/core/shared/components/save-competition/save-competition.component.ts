@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { min } from 'moment';
 import { Competition } from 'src/app/core/models/competition.model';
 import { CompetitionService } from 'src/app/core/services/competition.service';
 import Swal from 'sweetalert2';
@@ -25,9 +26,9 @@ export class SaveCompetitionComponent implements OnInit{
       date: [null, [Validators.required]],
       startTime: [null, [Validators.required]],
       endTime: ['', Validators.required],
-      numberOfParticipants: ['', Validators.required],
-      location: ['', Validators.required],
-      amount: ['', Validators.required],
+      numberOfParticipants: ['1', Validators.required],
+      location: [null, Validators.required],
+      amount: ['0', Validators.required],
     });
   }
   @Output() added = new EventEmitter<void>();
@@ -41,7 +42,7 @@ export class SaveCompetitionComponent implements OnInit{
             date: [null, [Validators.required]],
             startTime: [null, [Validators.required]],
             endTime: ['', Validators.required],
-            numberOfParticipants: ['', Validators.required],
+            numberOfParticipants: ['1', Validators.required],
             location: ['', Validators.required],
             amount: ['', Validators.required],
           });

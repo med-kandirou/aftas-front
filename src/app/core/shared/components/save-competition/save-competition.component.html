@@ -33,26 +33,44 @@
                     <div>
                           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of day</label>
                           <input type="date" formControlName="date" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
-                      </div>
+                            <div *ngIf="cometitionForm.get('date').hasError('required')" class="text-red-500 mt-1">
+                                Date is required
+                            </div>
+                        </div>
                       <div>
                           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start time</label>
                           <input type="time" formControlName="startTime" id="startTime" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                      </div>
+                          <div *ngIf="cometitionForm.get('startTime').hasError('required')" class="text-red-500 mt-1">
+                            Start time is required
+                          </div>
+                        </div>
                       <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End time</label>
                         <input type="time" formControlName="endTime" id="endTime" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <div *ngIf="cometitionForm.get('endTime').hasError('required')" class="text-red-500 mt-1">
+                            Start time is required
+                        </div>
                     </div>
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number Of participants</label>
-                        <input min="0" type="number" formControlName="numberOfParticipants" id="numberOfParticipants" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <input min="0" type="number" formControlName="numberOfParticipants" id="numberOfParticipants" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <div *ngIf="cometitionForm.get('numberOfParticipants').hasError('required')" class="text-red-500 mt-1">
+                            Number Of participants is required
+                        </div>
                     </div>
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
-                        <input type="text" formControlName="location" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <input type="text" formControlName="location" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <div *ngIf="cometitionForm.get('location').hasError('required')" class="text-red-500 mt-1">
+                            Location is required
+                        </div>
                     </div>
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
-                        <input min="0" type="number" formControlName="amount" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <input min="0" type="number" formControlName="amount" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <div *ngIf="cometitionForm.get('amount').hasError('required')" class="text-red-500 mt-1">
+                            Amount is required
+                        </div>
                     </div>
                       <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
                   </form>
