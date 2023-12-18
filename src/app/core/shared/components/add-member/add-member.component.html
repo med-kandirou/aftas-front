@@ -51,15 +51,24 @@
                       <div>
                           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                           <input type="text" id="name" formControlName="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                      </div>
+                          <div *ngIf="memberForm.get('name').hasError('required')" class="text-red-500 mt-1">
+                            Name is required
+                        </div>
+                        </div>
                       <div>
                           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Family name</label>
                           <input type="text" id="familyName" formControlName="familyName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                      </div>
+                          <div *ngIf="memberForm.get('familyName').hasError('required')" class="text-red-500 mt-1">
+                            familyName is required
+                          </div>
+                        </div>
                       <div>
                           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nationality</label>
                           <input type="text" id="nationality" formControlName="nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                      </div>
+                          <div *ngIf="memberForm.get('nationality').hasError('required')" class="text-red-500 mt-1">
+                            Nationality is required
+                         </div>
+                        </div>
                       <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identity Document</label>
                         <select type="text" id="identityDocument" formControlName="identityDocument" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
@@ -67,10 +76,16 @@
                             <option value="CARTE_RESIDENCE">CARTE RESIDENCE</option>
                             <option value="PASSPORT">PASSPORT</option>
                         </select>
+                        <div *ngIf="memberForm.get('identityDocument').hasError('required')" class="text-red-500 mt-1">
+                            Identity Document is required
+                        </div>
                     </div>                    
                       <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identity Number</label>
                         <input type="text" id="identityNumber" formControlName="identityNumber" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <div *ngIf="memberForm.get('identityNumber').hasError('required')" class="text-red-500 mt-1">
+                            Identity Number is required
+                        </div>
                     </div>
                       <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</button>
                   </form>
