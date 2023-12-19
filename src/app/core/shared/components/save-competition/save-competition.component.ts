@@ -37,15 +37,7 @@ export class SaveCompetitionComponent implements OnInit{
     if (this.cometitionForm.valid) {
       const formData: FormGroup = this.cometitionForm.value;
         this.compService.save(formData).subscribe((data:Competition)=>{
-          this.cometitionForm.patchValue({
-            code: "",
-            date: [null, [Validators.required]],
-            startTime: [null, [Validators.required]],
-            endTime: ['', Validators.required],
-            numberOfParticipants: ['1', Validators.required],
-            location: ['', Validators.required],
-            amount: ['', Validators.required],
-          });
+          this.initform();
           this.added.emit();
           const Toast = Swal.mixin({
             toast: true,

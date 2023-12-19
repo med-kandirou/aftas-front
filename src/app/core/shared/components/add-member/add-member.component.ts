@@ -34,6 +34,7 @@ export class AddMemberComponent {
     if (this.memberForm.valid) {
       const formData: FormGroup = this.memberForm.value;
         this.compService.save(formData).subscribe((data:Member)=>{
+          this.initform();
           this.added.emit();
           this.visible=false
           const Toast = Swal.mixin({
