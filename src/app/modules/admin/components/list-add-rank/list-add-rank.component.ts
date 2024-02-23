@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute  } from '@angular/router';
-import { Member } from 'src/app/core/models/member.model';
+import { App_user } from 'src/app/core/models/app_user.model';
 import { Ranking } from 'src/app/core/models/ranking.model';
 import { MemberService } from 'src/app/core/services/member.service';
 import { RankingService } from 'src/app/core/services/ranking.service';
@@ -16,14 +16,14 @@ export class ListAddRankComponent {
   constructor(private ActivatedRoute :ActivatedRoute,private servMember:MemberService,private servRank:RankingService,private fb:FormBuilder){}
 
   code:string
-  members:Member[]
+  members:App_user[]
   ngOnInit(): void {
     this.code=this.ActivatedRoute.snapshot.params['codeComp']
     this.getMemberNotExistInComp(this.code)
   }
 
   getMemberNotExistInComp(code:string){
-    this.servMember.getMemberNotExistInComp(code).subscribe((data:Member[])=>{
+    this.servMember.getMemberNotExistInComp(code).subscribe((data:App_user[])=>{
       this.members=data;
     })
   }
@@ -52,7 +52,7 @@ export class ListAddRankComponent {
   }
 
   search($event:string){
-    this.servMember.search(this.code,$event).subscribe((data:Member[])=>{
+    this.servMember.search(this.code,$event).subscribe((data:App_user[])=>{
       this.members=data;
     })
   }

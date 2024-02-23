@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_BASE_URL } from './api.config';
@@ -16,15 +16,24 @@ export class RankingService {
   constructor(private http:HttpClient) { }
 
   getRankingsbyComp(code:string): Observable<any> {
-    return this.http.get<any>(API_BASE_URL+`/api/Ranking/byCompetition/${code}`, { headers: { Accept: 'application/json' } });
+    const headers = new HttpHeaders()
+      .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      .set('Accept', 'application/json');
+    return this.http.get<any>(API_BASE_URL+`/api/Ranking/byCompetition/${code}`, { headers});
   }
 
   calculeRanks(code:string): Observable<any> {
-    return this.http.get<any>(API_BASE_URL+`/api/Ranking/calcule/${code}`, { headers: { Accept: 'application/json' } });
+    const headers = new HttpHeaders()
+      .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      .set('Accept', 'application/json');
+    return this.http.get<any>(API_BASE_URL+`/api/Ranking/calcule/${code}`, { headers });
   }
 
   save(form:any): Observable<Ranking> {
-    return this.http.post<Ranking>(API_BASE_URL+`/api/Ranking`,form ,{ headers: { Accept: 'application/json' } });
+    const headers = new HttpHeaders()
+      .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      .set('Accept', 'application/json');
+    return this.http.post<Ranking>(API_BASE_URL+`/api/Ranking`,form ,{ headers});
   }
 
 }

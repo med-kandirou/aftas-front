@@ -15,6 +15,8 @@ import { AddHuntComponent } from './core/shared/components/add-hunt/add-hunt.com
 import { ListAddRankComponent } from './modules/admin/components/list-add-rank/list-add-rank.component';
 import { AddMemberComponent } from './core/shared/components/add-member/add-member.component';
 import { PodiumComponent } from './core/shared/components/podium/podium.component';
+import { LoginComponent } from './modules/admin/components/login/login.component';
+import { RegisterComponent } from './modules/admin/components/register/register.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { PodiumComponent } from './core/shared/components/podium/podium.componen
     ListAddRankComponent,
     AddMemberComponent,
     PodiumComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

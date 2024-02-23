@@ -1,7 +1,7 @@
 import { Competition } from "./competition.model";
-import { Member } from "./member.model";
+import { App_user } from "./app_user.model";
 
 export interface RankingId{
-    member: Member;
+    member: App_user;
     competition: Competition;
 }

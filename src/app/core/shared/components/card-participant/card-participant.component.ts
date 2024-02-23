@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Member } from 'src/app/core/models/member.model';
+import { App_user } from 'src/app/core/models/app_user.model';
 
 @Component({
   selector: 'app-card-participant',
@@ -8,7 +8,7 @@ import { Member } from 'src/app/core/models/member.model';
 })
 export class CardParticipantComponent {
 
-  @Input() participant:Member
+  @Input() participant:App_user
   @Input() visible: boolean;
 
   @Output() numEmitter = new EventEmitter<number>();

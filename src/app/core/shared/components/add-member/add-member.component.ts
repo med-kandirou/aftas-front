@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Member } from 'src/app/core/models/member.model';
+import { App_user } from 'src/app/core/models/app_user.model';
 import { MemberService } from 'src/app/core/services/member.service';
 import Swal from 'sweetalert2';
 
@@ -33,7 +33,7 @@ export class AddMemberComponent {
     console.log(this.memberForm);
     if (this.memberForm.valid) {
       const formData: FormGroup = this.memberForm.value;
-        this.compService.save(formData).subscribe((data:Member)=>{
+        this.compService.save(formData).subscribe((data:App_user)=>{
           this.initform();
           this.added.emit();
           this.visible=false

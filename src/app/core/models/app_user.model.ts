@@ -1,6 +1,6 @@
 import { IdentityDocumentType } from "../enums/identityDocumentType";
 
-export interface Member {
+export interface App_user {
     num: number; 
     name: string;
     familyName: string;
@@ -8,4 +8,5 @@ export interface Member {
     nationality: string;
     identityDocument: IdentityDocumentType;
     identityNumber: string;
+    role: string;
 }

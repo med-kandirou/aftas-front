@@ -1,11 +1,11 @@
 import { Competition } from "./competition.model";
 import { Fish } from "./fish.model";
-import { Member } from "./member.model";
+import { App_user } from "./app_user.model";
 
 export interface Hunting {
     id: number;
     numberOfFish:number;
     fish: Fish;
-    member: Member;
+    member: App_user;
     competition: Competition;
 }
