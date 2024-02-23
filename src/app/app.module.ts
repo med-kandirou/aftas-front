@@ -17,6 +17,7 @@ import { AddMemberComponent } from './core/shared/components/add-member/add-memb
 import { PodiumComponent } from './core/shared/components/podium/podium.component';
 import { LoginComponent } from './modules/admin/components/login/login.component';
 import { RegisterComponent } from './modules/admin/components/register/register.component';
+import { UsersComponent } from './modules/admin/components/users/users.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { RegisterComponent } from './modules/admin/components/register/register.
     PodiumComponent,
     LoginComponent,
     RegisterComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

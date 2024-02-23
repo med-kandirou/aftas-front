@@ -28,6 +28,7 @@ export class ListParticipantComponent implements OnInit {
     this.servRanking.getRankingsbyComp(code).subscribe((data:Ranking[])=>{
       this.rankings=data;
     });
+    
   }
 
   getCompetition(code:string){

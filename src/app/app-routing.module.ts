@@ -6,6 +6,7 @@ import { ListAddRankComponent } from './modules/admin/components/list-add-rank/l
 import { PodiumComponent } from './core/shared/components/podium/podium.component';
 import { LoginComponent } from './modules/admin/components/login/login.component';
 import { RegisterComponent } from './modules/admin/components/register/register.component';
+import { UsersComponent } from './modules/admin/components/users/users.component';
 const routes: Routes = [
   { path : '', component: LoginComponent},
   { path : 'register', component: RegisterComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path : 'admin/competition/:codeComp/participants', component: ListParticipantComponent},
   { path : 'admin/competition/:codeComp/addRanking', component: ListAddRankComponent},
   { path : 'admin/competition/:codeComp/podium', component: PodiumComponent},
+  { path : 'admin/users', component: UsersComponent},
 ];
 
 @NgModule({

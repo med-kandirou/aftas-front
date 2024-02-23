@@ -18,6 +18,20 @@ export class MemberService {
     return this.http.post<App_user>(API_BASE_URL+`/api/Member`,form ,{ headers});
   }
 
+  getAll(): Observable<App_user[]> {
+    /*const headers = new HttpHeaders()
+      .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      .set('Accept', 'application/json');*/
+    return this.http.get<App_user[]>(API_BASE_URL+`/api/Member`);
+  }
+
+  updateRole(m:App_user): Observable<App_user> {
+    /*const headers = new HttpHeaders()
+      .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      .set('Accept', 'application/json');*/
+    return this.http.post<App_user>(API_BASE_URL+`/api/Member`,m);
+  }
+
   getMemberNotExistInComp(code: string): Observable<App_user[]> {
     const headers = new HttpHeaders()
       .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
