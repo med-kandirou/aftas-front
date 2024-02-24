@@ -25,7 +25,10 @@
                 <h1 class="px-2 text-sm">{{ participant.identityDocument }}</h1>
             </div>
         </div>
-        <div class="flex justify-center items-center mb-1" *ngIf="visible" >
-            <button (click)="emitNum(participant.num)" class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Add hunt</button>
+        <div *ngIf="role!='ADHERENT'">
+            <div class="flex justify-center items-center mb-1" *ngIf="visible" >
+                <button (click)="emitNum(participant.num)" class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Add hunt</button>
+            </div>
         </div>
+        
     </div>

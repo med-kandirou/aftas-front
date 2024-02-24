@@ -8,6 +8,11 @@ import { App_user } from 'src/app/core/models/app_user.model';
 })
 export class CardParticipantComponent {
 
+  role:String|null;
+  constructor(){
+    this.role=localStorage.getItem('role');
+  }
+
   @Input() participant:App_user
   @Input() visible: boolean;
 
