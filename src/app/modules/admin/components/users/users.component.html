@@ -11,6 +11,12 @@
                         Email
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Document identity
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        identity number
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Role
                     </th>
                 </tr>
@@ -20,6 +26,12 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                        {{ m.name }} {{ m.familyName }}
                     </th>
+                    <td class="px-6 py-4">
+                        {{ m.identityDocument }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ m.identityNumber }}
+                    </td>
                     <td class="px-6 py-4">
                         {{ m.email }}
                     </td>
