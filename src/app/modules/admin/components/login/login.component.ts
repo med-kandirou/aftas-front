@@ -24,6 +24,7 @@ export class LoginComponent {
     if (this.signInForm.valid) {
       this.authService.login(this.signInForm.value).subscribe((data:any)=>{
         localStorage.setItem('token',data.token);
+        localStorage.setItem('role',data.role);
         this.router.navigate(['/admin/competition']);
       });
     }

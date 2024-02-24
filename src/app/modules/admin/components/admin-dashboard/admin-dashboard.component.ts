@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
+  role: string | null;
 
+  constructor() {
+    this.role = localStorage.getItem('role');
+  }
 }

@@ -9,7 +9,10 @@ import { CompetitionService } from 'src/app/core/services/competition.service';
 })
 export class CompetitionSectionComponent {
 
-  constructor(private seviceComp:CompetitionService){}
+  role:string|null;
+  constructor(private seviceComp:CompetitionService){
+    this.role=localStorage.getItem('role');
+  }
 
   currentPage: number=0;
   currentSize: number=2;

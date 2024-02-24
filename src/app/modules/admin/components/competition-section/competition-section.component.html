@@ -59,5 +59,7 @@
             </nav>
 </div>
 
-    <app-save-competition (added)="this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre)"></app-save-competition>
+    <div *ngIf="role!='ADHERENT'">
+        <app-save-competition (added)="this.getCompetitions(this.currentPage,this.currentSize,this.currentfiltre)"></app-save-competition>
+    </div>
 </app-admin-dashboard>
