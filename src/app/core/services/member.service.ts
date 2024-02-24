@@ -19,17 +19,17 @@ export class MemberService {
   }
 
   getAll(): Observable<App_user[]> {
-    /*const headers = new HttpHeaders()
+    const headers = new HttpHeaders()
       .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-      .set('Accept', 'application/json');*/
-    return this.http.get<App_user[]>(API_BASE_URL+`/api/Member`);
+      .set('Accept', 'application/json');
+    return this.http.get<App_user[]>(API_BASE_URL+`/api/Member`,{headers});
   }
 
   updateRole(m:App_user): Observable<App_user> {
-    /*const headers = new HttpHeaders()
+    const headers = new HttpHeaders()
       .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-      .set('Accept', 'application/json');*/
-    return this.http.post<App_user>(API_BASE_URL+`/api/Member`,m);
+      .set('Accept', 'application/json');
+    return this.http.post<App_user>(API_BASE_URL+`/api/Member`,m,{headers});
   }
 
   getMemberNotExistInComp(code: string): Observable<App_user[]> {
