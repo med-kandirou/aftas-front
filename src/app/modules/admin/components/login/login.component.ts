@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,11 +23,17 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.signInForm.valid) {
-      this.authService.login(this.signInForm.value).subscribe((data:any)=>{
-        localStorage.setItem('token',data.token);
-        localStorage.setItem('role',data.role);
-        this.router.navigate(['/admin/competition']);
+      this.authService.login(this.signInForm.value).subscribe({
+        next: (data: any) => {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('role', data.role);
+          this.router.navigate(['/admin/competition']);
+        },
+        error: (error: HttpErrorResponse) => {
+          alert("email or password incorrect")
+        }
       });
+
     }
   }
 }
