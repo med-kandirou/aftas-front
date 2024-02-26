@@ -22,7 +22,7 @@ export class RegisterComponent {
       nationality: ['', Validators.required],
       identityDocument: ['', Validators.required],
       identityNumber: ['', Validators.required],
-      role: ['ADHERENT', Validators.required]
+      role: ['NONE', Validators.required]
     });
   }
 
