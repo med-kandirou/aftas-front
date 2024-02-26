@@ -6,11 +6,17 @@
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div>
-            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
             <div class="mt-2">
-              <input formControlName="username" id="username" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <input formControlName="name" id="name" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
         </div>
+        <div>
+          <label for="username" class="block text-sm font-medium leading-6 text-gray-900">familyName</label>
+          <div class="mt-2">
+            <input formControlName="familyName" id="familyName" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+      </div>
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
           <div class="mt-2">
@@ -34,7 +40,7 @@
         <div>
             <label for="identityDocument" class="block text-sm font-medium leading-6 text-gray-900">IdentityDocument</label>
             <div class="mt-2">
-                <select formControlName="identityDocument" id="identityDocument">
+                <select formControlName="identityDocument" id="identityDocument" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="PASSPORT">Password</option>
                     <option value="CIN">CIN</option>
                 </select>
